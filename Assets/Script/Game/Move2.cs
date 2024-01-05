@@ -1,9 +1,11 @@
 // Move2 脚本
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Move2 : MonoBehaviour
 {
     private float moveSpeed; // 移动速度
+    private bool canMove = true;
 
     private Rigidbody2D rb;
     public PlayerController playerController;  // 引用PlayerController脚本
@@ -23,6 +25,11 @@ public class Move2 : MonoBehaviour
             Vector2 movement = new Vector2(horizontalInput, 0f);
             rb.AddForce(movement * moveSpeed);
         }
+        if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) && gameObject == playerController.controlledBall)
+        {
+            canMove = false;
+        }
+
     }
 
     // 设置移动速度的公共方法

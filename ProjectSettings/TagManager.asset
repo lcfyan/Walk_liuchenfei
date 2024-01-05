@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Ball1
   - Ball2
+  - Ball3
+  - Ball
+  - Ball5
+  - auto
+  - Ball4
+  - Final
   layers:
   - Default
   - TransparentFX
